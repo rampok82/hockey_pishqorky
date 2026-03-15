@@ -249,8 +249,8 @@ button{font-family:'Oswald',sans-serif;cursor:pointer;border:none;border-radius:
 </div>
 
 <div class="btn-row">
-  <button class="btn-start" onclick="startGame()">🏒 Face-Off!</button>
-  <button class="btn-reset" onclick="resetScore()">New Game</button>
+  <button class="btn-start" onclick="faceOff()">🏒 Restart Game</button>
+  <button class="btn-reset" onclick="resetScore()">🏆 New Series</button>
 </div>
 
 <div class="scoreboard">
@@ -538,8 +538,9 @@ function startGame(auto=false, ot=false){
   SIZE=parseInt(selSize.value); WIN=parseInt(selWin.value);
   board=Array(SIZE*SIZE).fill(null);
   isOT=ot;
-  if(!auto && !ot){ nextStarter=1; gamesPlayed=0; isOT=false; }
-  if(auto && !ot){ gamesPlayed++; }  // increment only on real new game, not OT
+  if(!auto && !ot){ nextStarter=1; gamesPlayed=0; isOT=false; }  // New Series
+  if(auto===true && !ot){ gamesPlayed++; }                        // Next game after win
+  // auto==='restart' → keeps gamesPlayed as-is
   currentPlayer=nextStarter;
   gameOver=false; cpuThinking=false;
   updateScoreboard();
@@ -809,6 +810,11 @@ function endSeries(){
   document.getElementById('sc-series').textContent = seriesText;
   document.getElementById('sc-ot').textContent = isOT ? 'OT' : '';
 }
+function faceOff(){
+  // Restart current game in series — keeps series score and game number
+  nextStarter=1; isOT=false;
+  startGame('restart');
+}
 function resetScore(){
   scores={1:0,2:0,D:0}; gamesPlayed=0; nextStarter=1; isOT=false;
   updateScoreboard(); updateSeriesDots();
@@ -821,7 +827,7 @@ startGame();
 </script>
 <div style="margin-top:24px;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:.62rem;letter-spacing:.18em;color:#2a3f5a;text-transform:uppercase;line-height:1.8;">
   <div>Hockey Pishqorky · NHL Original Six Playoff Edition</div>
-  <div>Version v03.02 · March 2026</div>
+  <div>Version v03.04 · March 2026</div>
   <div style="margin-top:4px;color:#1e3050;">Made by MAKO+CLAUDE=VL for all hockey fans 🏒</div>
 </div>
 
