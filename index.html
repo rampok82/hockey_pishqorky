@@ -226,9 +226,9 @@ button{font-family:'Oswald',sans-serif;cursor:pointer;border:none;border-radius:
   <div class="ctrl-group">
     <label>Board Size</label>
     <select id="sel-size">
-      <option value="3">3 × 3</option><option value="4" selected>4 × 4</option>
+      <option value="3">3 × 3</option><option value="4">4 × 4</option>
       <option value="5">5 × 5</option><option value="6">6 × 6</option>
-      <option value="7">7 × 7</option><option value="8">8 × 8</option>
+      <option value="7">7 × 7</option><option value="8" selected>8 × 8</option>
       <option value="9">9 × 9</option><option value="10">10 × 10</option>
     </select>
   </div>
@@ -445,7 +445,7 @@ function playCpuTick(){
 }
 
 // ── STATE ──
-let SIZE=4,WIN=3,board=[],currentPlayer=1,gameOver=false;
+let SIZE=8,WIN=4,board=[],currentPlayer=1,gameOver=false;
 let scores={1:0,2:0,D:0},selectedTeams=[0,3];
 let gameMode='hvh', difficulty='easy', cpuThinking=false;
 let nextStarter=1, gamesPlayed=0, isOT=false;
@@ -821,7 +821,7 @@ startGame();
 </script>
 <div style="margin-top:24px;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:.62rem;letter-spacing:.18em;color:#2a3f5a;text-transform:uppercase;line-height:1.8;">
   <div>Hockey Pishqorky · NHL Original Six Playoff Edition</div>
-  <div>Version v03.01 · March 2026</div>
+  <div>Version v03.02 · March 2026</div>
   <div style="margin-top:4px;color:#1e3050;">Made by MAKO+CLAUDE=VL for all hockey fans 🏒</div>
 </div>
 
