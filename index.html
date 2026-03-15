@@ -98,7 +98,7 @@ button{font-family:'Oswald',sans-serif;cursor:pointer;border:none;border-radius:
 .score-mid .score-num{font-size:.95rem;color:var(--text-muted);}
 .score-mid .score-team{color:var(--text-muted);font-size:.5rem;}
 /* MUTE BUTTON */
-.btn-mute{position:fixed;top:12px;right:12px;z-index:300;background:var(--boards);border:1px solid var(--border);border-radius:8px;padding:6px 10px;font-size:1.1rem;cursor:pointer;transition:all .2s;color:var(--text-light);}
+.btn-mute{background:var(--boards);border:1px solid var(--border);border-radius:6px;padding:5px 9px;font-size:.86rem;cursor:pointer;transition:all .2s;color:var(--text-light);}
 .btn-mute:hover{border-color:var(--gold);}
 .btn-mute.muted{border-color:var(--line-red);opacity:.7;}
 /* BEST-OF dots in scoreboard */
@@ -152,9 +152,7 @@ button{font-family:'Oswald',sans-serif;cursor:pointer;border:none;border-radius:
 </head>
 <body>
 
-<button class="btn-mute" id="btn-mute" onclick="toggleMute()" title="Toggle sound">🔊</button>
 
-<!-- PLAYOFF CHAMPION MODAL -->
 <div class="playoff-modal" id="playoff-modal">
   <div class="playoff-inner">
     <div class="playoff-title">🏒 Series Champion</div>
@@ -245,6 +243,10 @@ button{font-family:'Oswald',sans-serif;cursor:pointer;border:none;border-radius:
       <option value="7" selected>best of 7</option>
       <option value="9">best of 9</option>
     </select>
+  </div>
+  <div class="ctrl-group">
+    <label>Sound</label>
+    <button class="btn-mute" id="btn-mute" onclick="toggleMute()" title="Toggle sound">🔊</button>
   </div>
 </div>
 
@@ -827,7 +829,7 @@ startGame();
 </script>
 <div style="margin-top:24px;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:.62rem;letter-spacing:.18em;color:#2a3f5a;text-transform:uppercase;line-height:1.8;">
   <div>Hockey Pishqorky · NHL Original Six Playoff Edition</div>
-  <div>Version v03.04 · March 2026</div>
+  <div>Version v03.07 · March 2026</div>
   <div style="margin-top:4px;color:#1e3050;">Made by MAKO+CLAUDE=VL for all hockey fans 🏒</div>
 </div>
 
